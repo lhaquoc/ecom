@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="favoriteVM" type="com.ecom.app.modules.favorite.data.viewmodel.FavoriteVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearFavorite"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_300_01">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <ImageView android:id="@+id/imageArrowleft"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_group36"
+                tools:ignore="ContentDescription" tools:src="@drawable/img_group36"/>
+            <LinearLayout android:id="@+id/linearGroup13"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageSearch"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_24pxh"
+                    android:layout_width="@dimen/_24pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_search_blue_gray_900"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_search_blue_gray_900"/>
+                <ImageView android:id="@+id/imageBag"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_24pxh"
+                    android:layout_width="@dimen/_24pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_bag"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_bag"/>
+                <ImageView android:id="@+id/imageMenu"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_24pxh"
+                    android:layout_width="@dimen/_24pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_menu_blue_gray_900"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_menu_blue_gray_900"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnfavorite"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_25pxv"
+            android:paddingEnd="@dimen/_22pxh"
+            android:paddingStart="@dimen/_22pxh" android:paddingTop="@dimen/_25pxv">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtFavorite"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{favoriteVM.favoriteModel.txtFavorite}"
+                style="@style/txtPlayfairDisplayitalicregular40_2" tools:text="@string/lbl_favorite"/>
+            <LinearLayout android:id="@+id/linearCoupon"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_25pxv"
+                android:paddingEnd="@dimen/_84pxh"
+                android:paddingStart="@dimen/_84pxh"
+                android:paddingTop="@dimen/_25pxv" style="@style/groupStyle">
+                <TextView android:ellipsize="end"
+                    android:gravity="center_horizontal"
+                    android:id="@+id/txtCoupon"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:text="@{favoriteVM.favoriteModel.txtCoupon}"
+                    style="@style/txtPlayfairDisplayromanbold45" tools:text="@string/lbl_coupon"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerFavorite"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" itemSpace="@{@dimen/_16pxh}"
+                tools:itemCount="4" tools:listitem="@layout/row_favorite"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

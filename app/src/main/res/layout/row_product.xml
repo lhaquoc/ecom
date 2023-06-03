@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="productRowModel" type="com.ecom.app.modules.product.data.model.ProductRowModel"/>
+    </data>
+    <FrameLayout android:id="@+id/frameStackrectanglefourteen"
+        android:layout_height="wrap_content" android:layout_width="@dimen/_335pxh">
+        <ImageView android:id="@+id/imageRectangleFourteen"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/_400pxh"
+            android:layout_width="@dimen/_335pxh"
+            android:scaleType="fitXY" cornerRadius="@{@dimen/_30pxh}"
+            imageRes="@{@drawable/img_rectangle14_400x335_1}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_rectangle14_400x335_1"/>
+        <LinearLayout android:id="@+id/linearColumnprice"
+            android:layout_gravity="bottom|end"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <TextView android:ellipsize="end" android:id="@+id/txtPrice"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{productRowModel.txtPrice}"
+                style="@style/txtPlayfairDisplayplayfairdisplaymedium36" tools:text="@string/lbl_58"/>
+            <LinearLayout android:gravity="end"
+                android:id="@+id/linearRowfavorite"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageButton
+                    android:background="@drawable/rectangle_bg_white_a700_radius_27"
+                    android:id="@+id/btnFavorite"
+                    android:layout_gravity="bottom"
+                    android:layout_height="@dimen/_55pxh"
+                    android:layout_width="@dimen/_55pxh"
+                    android:paddingHorizontal="@dimen/_15pxh"
+                    android:paddingVertical="@dimen/_15pxv"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_favorite" tools:ignore="ContentDescription"/>
+                <ImageView android:id="@+id/imageGroupFortyEight"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_149pxh"
+                    android:layout_width="@dimen/_158pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_group48"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_group48"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

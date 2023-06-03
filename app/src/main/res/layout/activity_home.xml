@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="homeVM" type="com.ecom.app.modules.home.data.viewmodel.HomeVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearHome"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_300_01">
+        <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
+            android:id="@+id/toolbarAppbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" app:contentInsetStart="0dp">
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtStreetStyle"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:text="@{homeVM.homeModel.txtStreetStyle}"
+                style="@style/txtJosefinSansbold24" tools:text="@string/lbl_street_style"/>
+            <LinearLayout android:id="@+id/linearGroup1"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <ImageView android:id="@+id/imageSearch"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_24pxh"
+                    android:layout_width="@dimen/_24pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_search_blue_gray_900"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_search_blue_gray_900"/>
+                <ImageView android:id="@+id/imageBag"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_24pxh"
+                    android:layout_width="@dimen/_24pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_bag"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_bag"/>
+                <ImageView android:id="@+id/imageMenu"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="@dimen/_24pxh"
+                    android:layout_width="@dimen/_24pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_menu_blue_gray_900"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_menu_blue_gray_900"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:gravity="start"
+            android:id="@+id/linearColumnbestsellers"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_55pxv"
+            android:paddingEnd="@dimen/_40pxh"
+            android:paddingStart="@dimen/_40pxh" android:paddingTop="@dimen/_55pxv">
+            <LinearLayout android:id="@+id/linearColumnline5copy"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_38pxv"
+                android:paddingEnd="@dimen/_31pxh"
+                android:paddingStart="@dimen/_31pxh"
+                android:paddingTop="@dimen/_38pxv" style="@style/groupStylecornerRadius">
+                <View android:background="@color/gray_800"
+                    android:id="@+id/lineLine5Copy"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_1pxv" android:layout_width="@dimen/_150pxh"/>
+                <TextView android:gravity="start"
+                    android:id="@+id/txtBIGSEASONALSALEOne"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:lineSpacingExtra="@dimen/_2pxh"
+                    android:text="@{homeVM.homeModel.txtBIGSEASONALSALEOne}"
+                    style="@style/txtPlayfairDisplayitalicregular50" tools:text="@string/msg_big_seasonal_s"/>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtSAVEUPTO"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingExtra="@dimen/_6pxh"
+                    android:singleLine="true"
+                    android:text="@{homeVM.homeModel.txtSAVEUPTO}"
+                    style="@style/txtPlayfairDisplayromanbold16" tools:text="@string/lbl_save_up_to"/>
+                <ImageView android:id="@+id/imageVolume"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_36pxh"
+                    android:layout_width="@dimen/_94pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_volume"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_volume"/>
+                <View android:background="@color/gray_800"
+                    android:id="@+id/lineLineFive"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="@dimen/_1pxv" android:layout_width="@dimen/_150pxh"/>
+            </LinearLayout>
+            <TextView android:ellipsize="end"
+                android:id="@+id/txtBestSellers"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:text="@{homeVM.homeModel.txtBestSellers}"
+                style="@style/txtPlayfairDisplayitalicregular40" tools:text="@string/lbl_bestsellers2"/>
+            <TextView android:gravity="center_horizontal"
+                android:id="@+id/txtFuelyourworkoutOne"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:lineSpacingExtra="@dimen/_4pxh"
+                android:text="@{homeVM.homeModel.txtFuelyourworkoutOne}"
+                style="@style/txtPlayfairDisplayromanbold14" tools:text="@string/msg_fuel_your_worko"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
